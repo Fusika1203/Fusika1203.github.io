@@ -2,6 +2,8 @@
 
 Homework #1 for **Generative AI (Fall 2026)**: a personal portfolio website built with generative AI as a design and coding collaborator.
 
+- **Live website:** https://fusika1203.github.io/
+- **Source code:** https://github.com/Fusika1203/Fusika1203.github.io
 - **Student:** Thanh Dat Nguyen · 阮成達 · Student ID **M1461025**
 - **Program:** Master's Program in Artificial Intelligence (人工智慧碩士班), Chang Gung University
 
