@@ -1,0 +1,995 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thanh Dat Nguyen (阮成達) | Research Portfolio</title>
+  <meta name="description" content="Research portfolio of Thanh Dat Nguyen (阮成達), master's student in the Department of Artificial Intelligence, Chang Gung University (Student ID M1461025). Bioinformatics, cancer biomarkers, machine learning in healthcare, and quantum machine learning.">
+  <meta name="author" content="Thanh Dat Nguyen">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#F0F7FF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#071A2F" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Thanh Dat Nguyen (阮成達) | Research Portfolio">
+  <meta property="og:description" content="Master's student in Artificial Intelligence at Chang Gung University. Bioinformatics, cancer biomarkers, machine learning in healthcare, and quantum machine learning.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <!-- Apply the saved theme before first paint so there is no light/dark flash. -->
+  <script>
+    (function () {
+      var root = document.documentElement;
+      root.classList.add("js");
+      try {
+        var saved = localStorage.getItem("theme");
+        if (saved === "light" || saved === "dark") root.dataset.theme = saved;
+      } catch (e) { /* storage blocked: fall back to the OS preference */ }
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@500;600;700&family=Noto+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap">
+  <!-- Only the Chinese glyphs used on the page are requested. -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500;700&display=swap&text=%E9%98%AE%E6%88%90%E9%81%94">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <!-- Icon sprite (paths from Lucide, ISC license) -->
+  <svg xmlns="http://www.w3.org/2000/svg" hidden>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></symbol>
+    <symbol id="i-atom" viewBox="0 0 24 24"><circle cx="12" cy="12" r="1"/><path d="M20.2 20.2c2.04-2.03.02-7.36-4.5-11.9-4.54-4.52-9.87-6.54-11.9-4.5-2.04 2.03-.02 7.36 4.5 11.9 4.54 4.52 9.87 6.54 11.9 4.5Z"/><path d="M15.7 15.7c4.52-4.54 6.54-9.87 4.5-11.9-2.03-2.04-7.36-.02-11.9 4.5-4.52 4.54-6.54 9.87-4.5 11.9 2.03 2.04 7.36.02 11.9-4.5Z"/></symbol>
+    <symbol id="i-badge-check" viewBox="0 0 24 24"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+    <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
+    <symbol id="i-graduation" viewBox="0 0 24 24"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><path d="M12 12h.01"/><path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M22 13a18.15 18.15 0 0 1-20 0"/><rect width="20" height="14" x="2" y="6" rx="2"/></symbol>
+    <symbol id="i-flask" viewBox="0 0 24 24"><path d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2"/><path d="M6.453 15h11.094"/><path d="M8.5 2h7"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-scholar" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></symbol>
+    <symbol id="i-microscope" viewBox="0 0 24 24"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></symbol>
+    <symbol id="i-brain" viewBox="0 0 24 24"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M9 13a4.5 4.5 0 0 0 3-4"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M12 13h4"/><path d="M12 18h6a2 2 0 0 1 2 2v1"/><path d="M12 8h8"/><path d="M16 8V5a2 2 0 0 1 2-2"/><circle cx="16" cy="13" r=".5"/><circle cx="18" cy="3" r=".5"/><circle cx="20" cy="21" r=".5"/><circle cx="20" cy="8" r=".5"/></symbol>
+    <symbol id="i-map-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#about" aria-label="Thanh Dat Nguyen, back to top">
+        <span class="brand-mark" aria-hidden="true">TDN</span>
+        <span class="brand-text">
+          <span class="brand-name">Thanh Dat Nguyen</span>
+          <span class="brand-sub">Research Portfolio</span>
+        </span>
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#awards">Awards</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch to dark theme">
+          <svg class="icon icon-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+          <svg class="icon icon-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+        </button>
+        <button class="icon-btn nav-toggle" id="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
+          <svg class="icon icon-open" aria-hidden="true"><use href="#i-menu"/></svg>
+          <svg class="icon icon-close" aria-hidden="true"><use href="#i-x"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============================== ABOUT ============================== -->
+    <section id="about" class="hero" aria-labelledby="about-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1 id="about-title" class="hero-name">
+            Thanh Dat Nguyen <span class="name-zh">(<span lang="zh-Hant">阮成達</span>)</span>
+          </h1>
+          <p class="hero-role">Research interests in Bioinformatics, Medical AI &amp; Quantum Machine Learning</p>
+
+          <dl class="facts">
+            <div class="fact fact-id">
+              <dt>Student ID</dt>
+              <dd>M1461025</dd>
+            </div>
+            <div class="fact">
+              <dt>Program</dt>
+              <dd>Master's Program in Artificial Intelligence</dd>
+            </div>
+            <div class="fact">
+              <dt>University</dt>
+              <dd>Chang Gung University, Taoyuan, Taiwan</dd>
+            </div>
+            <div class="fact">
+              <dt>Lab</dt>
+              <dd>Quantum AI Biomedical Research Lab</dd>
+            </div>
+          </dl>
+
+          <div class="hero-bio">
+            <p>
+              I am a master's student in the Department of Artificial Intelligence at Chang Gung University and a research
+              assistant in the Quantum AI Biomedical Research Lab. My master's thesis will focus on developing an
+              AI-assisted clinical decision support system for thalassemia screening by applying quantum machine learning.
+              My research interests are bioinformatics for cancer diagnosis and treatment, machine learning applications in
+              healthcare, and quantum machine learning for biomedical data.
+            </p>
+            <p>
+              Before coming to Taiwan, I was a researcher at the Research Center for Genetics and Reproductive Health,
+              University of Health Sciences, Vietnam National University Ho Chi Minh City (VNU-HCM), from November 2022 to July 2025.
+              I hold a B.Sc. in Biotechnology from Tan Tao University (2018–2022), where my thesis focused on a risk assessment
+              system for predicting lung metastasis in breast cancer.
+            </p>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#publications">
+              View Publications
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+            </a>
+            <a class="btn btn-secondary" href="#certificates">
+              <svg class="icon" aria-hidden="true"><use href="#i-badge-check"/></svg>
+              View Certificates
+            </a>
+          </div>
+
+          <ul class="social" aria-label="Profiles">
+            <li><a class="icon-btn" href="mailto:M1461025@cgu.edu.tw" aria-label="Email M1461025@cgu.edu.tw"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></a></li>
+            <li><a class="icon-btn" href="https://scholar.google.com/citations?user=3tyazNoAAAAJ&amp;hl=en" aria-label="Google Scholar profile"><svg class="icon" aria-hidden="true"><use href="#i-scholar"/></svg></a></li>
+            <li><a class="icon-btn" href="https://orcid.org/0009-0002-9241-6371" aria-label="ORCID profile"><span class="orcid-badge" aria-hidden="true">iD</span></a></li>
+            <li><a class="icon-btn" href="https://github.com/Fusika1203" aria-label="GitHub profile"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a></li>
+          </ul>
+        </div>
+
+        <div class="hero-figure">
+          <img class="hero-photo"
+               src="assets/img/profile-taipei-960.webp"
+               srcset="assets/img/profile-taipei-480.webp 480w, assets/img/profile-taipei-960.webp 960w"
+               sizes="(min-width: 960px) 320px, 220px"
+               width="960" height="1418"
+               alt="Thanh Dat Nguyen smiling on a street in Taipei, with Taipei 101 in the background."
+               fetchpriority="high">
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= EDUCATION & EXPERIENCE ======================= -->
+    <section id="education" class="section" aria-labelledby="education-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 id="education-title">Education &amp; Experience</h2>
+        </div>
+
+        <div class="two-col">
+          <div class="reveal">
+            <h3 class="col-title"><svg class="icon" aria-hidden="true"><use href="#i-graduation"/></svg>Education</h3>
+            <ol class="timeline">
+              <li class="tl-item">
+                <p class="tl-period"><time datetime="2025-09">Sep 2025</time> – present</p>
+                <h4 class="tl-title">Master's Program in Artificial Intelligence</h4>
+                <p class="tl-org">Department of Artificial Intelligence, Chang Gung University, Taiwan</p>
+                <ul class="tl-notes">
+                  <li>Thesis (in progress): “Development and Evaluation of an AI-Assisted Clinical Decision Support System for Thalassemia Screening”</li>
+                  <li>Selected coursework: Introduction to Quantum Computing, Quantum Machine Learning, Quantum Information, Bioinformatics, Clinical Informatics, Deep Learning Architecture</li>
+                  <li>MOE Taiwan Scholarship (Sep 2025 – Aug 2027)</li>
+                  <li>Certificate of Merit for Academic Excellence (Aug 2025 – Jan 2026)</li>
+                </ul>
+              </li>
+              <li class="tl-item">
+                <p class="tl-period"><time datetime="2018-09">Sep 2018</time> – <time datetime="2022">2022</time></p>
+                <h4 class="tl-title">B.Sc. in Biotechnology</h4>
+                <p class="tl-org">School of Biotechnology, Tan Tao University, Vietnam</p>
+                <ul class="tl-notes">
+                  <li>GPA: 3.83 / 4.00</li>
+                  <li>Thesis: “Risk score for predicting lung metastasis in breast cancer patients: A novel risk assessment system using logistic regression analysis”</li>
+                  <li>Tan Tao University Scholarship: 100% in the first year and 70% in later years; two more semesters were raised to 100% for academic excellence</li>
+                </ul>
+              </li>
+            </ol>
+          </div>
+
+          <div class="reveal">
+            <h3 class="col-title"><svg class="icon" aria-hidden="true"><use href="#i-briefcase"/></svg>Experience</h3>
+            <ol class="timeline">
+              <li class="tl-item">
+                <p class="tl-period"><time datetime="2026-09">Sep 2026</time> – present</p>
+                <h4 class="tl-title">Teaching Assistant</h4>
+                <p class="tl-org">Department of Artificial Intelligence, Chang Gung University, Taiwan</p>
+                <ul class="tl-notes">
+                  <li>Primary course: Data Analysis</li>
+                  <li>Support courses: Genomic Data Science, Introduction to Quantum Computing, and Quantum Information (Ph.D. course)</li>
+                </ul>
+              </li>
+              <li class="tl-item">
+                <p class="tl-period"><time datetime="2025-09">Sep 2025</time> – present</p>
+                <h4 class="tl-title">Research Assistant</h4>
+                <p class="tl-org">Quantum AI Biomedical Research Lab, Department of Artificial Intelligence, Chang Gung University, Taiwan</p>
+                <ul class="tl-notes">
+                  <li>Project: An ensemble learning model for thalassemia screening from complete blood count test</li>
+                </ul>
+              </li>
+              <li class="tl-item">
+                <p class="tl-period"><time datetime="2022-11">Nov 2022</time> – <time datetime="2025-07">Jul 2025</time></p>
+                <h4 class="tl-title">Researcher</h4>
+                <p class="tl-org">Research Center for Genetics and Reproductive Health, University of Health Sciences, VNU-HCM, Vietnam</p>
+                <ul class="tl-notes">
+                  <li>Conducted bioinformatics analyses for cancer biomarker identification</li>
+                  <li>Collaborated on projects focused on early cancer detection and metastasis prediction</li>
+                  <li>Developed machine learning models for thalassemia prediction</li>
+                  <li>Participated in national and international scientific conferences</li>
+                </ul>
+              </li>
+              <li class="tl-item">
+                <p class="tl-period"><time datetime="2021">2021</time> – <time datetime="2022">2022</time></p>
+                <h4 class="tl-title">Principal Investigator, student research project</h4>
+                <p class="tl-org">Tan Tao University, Vietnam</p>
+                <ul class="tl-notes">
+                  <li><i>GADD45B</i> expression is associated with risk of bone metastasis and survival outcome in breast cancer patients</li>
+                </ul>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================= SKILLS & CERTIFICATES ========================= -->
+    <section id="skills" class="section section-soft" aria-labelledby="skills-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 id="skills-title">Skills &amp; Certificates</h2>
+        </div>
+
+        <h3 class="col-title reveal"><svg class="icon" aria-hidden="true"><use href="#i-microscope"/></svg>Skills</h3>
+        <div class="skill-groups reveal">
+          <div class="skill-group">
+            <h4>Statistical and data analysis</h4>
+            <ul>
+              <li>Processing and analysis of biological datasets from public databases (GEO, ArrayExpress, TCGA)</li>
+              <li>Differential expression analysis of microarray and RNA-seq data</li>
+              <li>Feature selection and modeling: LASSO, logistic regression, ensemble learning</li>
+              <li>Survival analysis: Kaplan-Meier curves, univariate and multivariate Cox regression</li>
+              <li>Model evaluation: ROC/AUC, validation on independent external cohorts</li>
+              <li>Bioinformatics tools (BLAST, IGV)</li>
+              <li>R for statistical computing and data analysis; author of <i>FUSIKA</i>, an R package for heatmap, violin, and ROC plots</li>
+              <li>Python (NumPy, pandas, scikit-learn, PyTorch); Bash scripting</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h4>Wet-lab techniques</h4>
+            <ul>
+              <li>DNA/RNA extraction and purification, PCR, RT-qPCR</li>
+              <li>Cell culture: cell line maintenance, cell viability assays (MTT, XTT), cryopreservation</li>
+              <li>Cytotoxicity screening of plant extracts on MDA-MB-231 breast cancer cells (MTT assay, cisplatin as reference drug)</li>
+              <li>Cell stock management and record keeping</li>
+              <li>Microscopy</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h4>Quantum computing</h4>
+            <ul>
+              <li>Qiskit and PennyLane; running circuits on the IBM Quantum Platform</li>
+              <li>Variational quantum circuits, quantum kernels, quantum neural networks, data re-uploading classifiers</li>
+              <li>Quantum algorithms: teleportation, dense coding, Grover's search</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="certs-block" id="certificates">
+          <h3 class="col-title reveal"><svg class="icon" aria-hidden="true"><use href="#i-badge-check"/></svg>Featured certificates</h3>
+          <p class="section-note certs-note reveal">Click a certificate to view it in full size. IBM badges can be verified on Credly.</p>
+          <ul class="certs">
+            <li class="cert">
+              <a class="cert-media" href="assets/img/certs/gci-world-2026-honor-1600.webp">
+                <img src="assets/img/certs/gci-world-2026-honor-640.webp" width="640" height="453" loading="lazy" decoding="async"
+                     alt="Certificate of Honor from the Matsuo-Iwasawa Laboratory, The University of Tokyo, stating that Thanh Dat Nguyen completed GCI World April 2026 and was awarded honors for excellence in the final assessment.">
+              </a>
+              <div class="cert-body">
+                <p class="cert-level"><span class="cert-icon" aria-hidden="true"><svg class="icon"><use href="#i-graduation"/></svg></span>Certificate of Honor</p>
+                <h4>GCI World April 2026: Data Science</h4>
+                <p class="cert-issuer">Matsuo-Iwasawa Laboratory, The University of Tokyo</p>
+                <p class="cert-date">Issued <time datetime="2026-08-31">August 31, 2026</time></p>
+                <p class="cert-desc">Course on the fundamental theories and implementations of data science. Awarded honors for excellence in the final assessment.</p>
+              </div>
+            </li>
+            <li class="cert">
+              <a class="cert-media" href="assets/img/certs/qgss-2026-quantum-excellence-1600.webp">
+                <img src="assets/img/certs/qgss-2026-quantum-excellence-640.webp" width="640" height="494" loading="lazy" decoding="async"
+                     alt="IBM certificate for the Qiskit Global Summer School 2026 Quantum Excellence badge, issued to Thanh Dat Nguyen on 21 August 2026.">
+              </a>
+              <div class="cert-body">
+                <p class="cert-level"><img class="cert-badge" src="assets/img/certs/badge-qgss-2026-160.webp" width="40" height="40" alt="">Advanced</p>
+                <h4>Qiskit Global Summer School 2026: Quantum Excellence</h4>
+                <p class="cert-issuer">IBM Quantum</p>
+                <p class="cert-date">Issued <time datetime="2026-08-21">August 21, 2026</time></p>
+                <p class="cert-desc">Highest badge of the summer school: at least 80% of the core lectures and 3–4 of the 4 graded labs completed.</p>
+                <a class="cert-link" href="https://www.credly.com/go/IyESDCJ3">Verify on Credly</a>
+              </div>
+            </li>
+            <li class="cert">
+              <a class="cert-media" href="assets/img/certs/ibm-quantum-machine-learning-1600.webp">
+                <img src="assets/img/certs/ibm-quantum-machine-learning-640.webp" width="640" height="494" loading="lazy" decoding="async"
+                     alt="IBM certificate for Quantum Machine Learning issued to Thanh Dat Nguyen on April 23, 2026.">
+              </a>
+              <div class="cert-body">
+                <p class="cert-level"><img class="cert-badge" src="assets/img/certs/badge-quantum-machine-learning-160.webp" width="40" height="40" alt="">Intermediate</p>
+                <h4>Quantum Machine Learning</h4>
+                <p class="cert-issuer">IBM Quantum</p>
+                <p class="cert-date">Issued <time datetime="2026-04-23">April 23, 2026</time></p>
+                <p class="cert-desc">Course badge from IBM Quantum, verifiable on Credly.</p>
+                <a class="cert-link" href="https://www.credly.com/badges/91e9b422-5bdc-49cc-a1ba-5dd22b2c837a">Verify on Credly</a>
+              </div>
+            </li>
+            <li class="cert">
+              <a class="cert-media" href="assets/img/certs/ibm-basics-of-quantum-information-1600.webp">
+                <img src="assets/img/certs/ibm-basics-of-quantum-information-640.webp" width="640" height="494" loading="lazy" decoding="async"
+                     alt="IBM certificate for Basics of Quantum Information issued to Thanh Dat Nguyen on November 3, 2025.">
+              </a>
+              <div class="cert-body">
+                <p class="cert-level"><img class="cert-badge" src="assets/img/certs/badge-basics-of-quantum-information-160.webp" width="40" height="40" alt="">Foundational</p>
+                <h4>Basics of Quantum Information</h4>
+                <p class="cert-issuer">IBM Quantum</p>
+                <p class="cert-date">Issued <time datetime="2025-11-03">November 3, 2025</time></p>
+                <p class="cert-desc">Course badge from IBM Quantum, verifiable on Credly.</p>
+                <a class="cert-link" href="https://www.credly.com/badges/d75ee0a8-bd02-47f9-9c16-3ba58fa2c939">Verify on Credly</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== RESEARCH ============================== -->
+    <section id="research" class="section" aria-labelledby="research-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 id="research-title">Research</h2>
+        </div>
+
+        <h3 class="col-title reveal">Research interests</h3>
+        <ul class="interests reveal">
+          <li class="interest">
+            <span class="interest-icon" aria-hidden="true"><svg class="icon"><use href="#i-microscope"/></svg></span>
+            <h4>Bioinformatics for cancer diagnosis and treatment</h4>
+            <p>Conducting genomic and transcriptomic analyses to discover biomarkers and improve cancer diagnostics.</p>
+          </li>
+          <li class="interest">
+            <span class="interest-icon" aria-hidden="true"><svg class="icon"><use href="#i-brain"/></svg></span>
+            <h4>Machine learning applications in healthcare</h4>
+            <p>Developing predictive models for cancer diagnosis, cancer metastasis, and blood disorders to support early detection and personalized treatment.</p>
+          </li>
+          <li class="interest">
+            <span class="interest-icon" aria-hidden="true"><svg class="icon"><use href="#i-atom"/></svg></span>
+            <h4>Quantum machine learning for biomedical data</h4>
+            <p>Applying quantum kernels, variational quantum circuits, and quantum neural networks to biomedical data, and comparing them with classical machine learning models.</p>
+          </li>
+        </ul>
+
+        <!-- Selected research project (handout requirement) -->
+        <article class="featured reveal" aria-labelledby="featured-title">
+          <p class="featured-label">Selected research project</p>
+          <h3 id="featured-title">Prediction of Lung Metastasis in Breast Cancer Patients</h3>
+          <p class="featured-meta">VNU-HCM research project, 2023–2025 · Paper: <em>The Journal of Molecular Diagnostics</em> 28(2):147–159 (first author)</p>
+
+          <div class="featured-grid">
+            <div class="featured-text">
+              <h4>Background</h4>
+              <p>Breast cancer is the most common cancer among women, and metastasis to the lung is associated with poor prognosis. CT and PET imaging can miss micrometastases and lung biopsy is invasive, so reliable biomarkers for predicting lung metastasis are needed to improve early detection and clinical decision-making.</p>
+
+              <h4>Data and methods</h4>
+              <p>We analyzed four public microarray datasets with gene expression profiles of primary breast tumors and lung-metastasis follow-up (775 patients). <span class="nowrap">E-MTAB-365</span> was used for training, GSE2603 and GSE5327 for validation, and METABRIC as an independent test set. Probesets were screened by their AUC for lung metastasis, LASSO selected 11 candidate genes, and logistic regression models built from combinations of these genes were compared to find the best risk signature.</p>
+
+              <h4>Results</h4>
+              <p>The best model combined 10 genes. Its AUC ranged from 0.872 to 0.949 in the training and validation cohorts and was 0.706 in the independent METABRIC cohort, and it stayed predictive in patients with early-stage disease (AUC 0.709–0.960). Patients with high risk scores developed lung metastasis sooner in the three discovery cohorts and had shorter recurrence-free and overall survival in METABRIC. The signature remained an independent predictor after adjusting for age and ER, PR, and HER2 status (multivariate Cox regression, P &lt; 0.001), and it outperformed clinical indicators such as ER status, TP53 status, and TNM stage.</p>
+
+              <h4>Conclusion</h4>
+              <p>A 10-gene signature measured in the primary tumor can identify breast cancer patients at high risk of lung metastasis. It could help clinicians focus imaging and follow-up on high-risk patients and tailor their treatment, while sparing low-risk patients unnecessary procedures. External and prospective validation is still needed before clinical use.</p>
+
+              <h4>My role</h4>
+              <p>First author. I co-designed the study, analyzed and interpreted the data, and co-wrote the manuscript. I was also a member of the VNU-HCM research project that funded this work (grant C2023-44-11).</p>
+            </div>
+
+            <figure class="pipeline" aria-labelledby="pipeline-caption">
+              <ol>
+                <li><strong>Public cohorts</strong><span>4 microarray datasets, 775 patients with lung-metastasis follow-up</span></li>
+                <li><strong>High-throughput screening</strong><span><b class="count">21,177 → 35</b> probesets with AUC &gt; 0.65 in all three discovery cohorts</span></li>
+                <li><strong>LASSO feature selection</strong><span><b class="count">35 → 11</b> candidate genes: 6 up- and 5 down-regulated in lung metastasis</span></li>
+                <li><strong>Logistic regression</strong><span>Gene combinations ranked by total AUC; the best is the <b class="count">10-gene</b> risk signature</span></li>
+                <li class="pipeline-result">
+                  <strong>Validation: AUC in each cohort</strong>
+                  <div class="auc-chart">
+                    <ul class="auc-list">
+                      <li class="auc-item" tabindex="0" style="--v: 0.872">
+                        <span class="auc-name"><b>E-MTAB-365</b> <span>Training · n = 412</span></span>
+                        <span class="auc-track"><span class="auc-bar"></span><span class="auc-val">0.872</span></span>
+                        <span class="auc-tip">Sensitivity <b>0.838</b> · Specificity <b>0.800</b></span>
+                      </li>
+                      <li class="auc-item" tabindex="0" style="--v: 0.949">
+                        <span class="auc-name"><b>GSE2603</b> <span>Validation · n = 82</span></span>
+                        <span class="auc-track"><span class="auc-bar"></span><span class="auc-val">0.949</span></span>
+                        <span class="auc-tip">Sensitivity <b>0.857</b> · Specificity <b>0.956</b></span>
+                      </li>
+                      <li class="auc-item" tabindex="0" style="--v: 0.877">
+                        <span class="auc-name"><b>GSE5327</b> <span>Validation · n = 58</span></span>
+                        <span class="auc-track"><span class="auc-bar"></span><span class="auc-val">0.877</span></span>
+                        <span class="auc-tip">Sensitivity <b>0.714</b> · Specificity <b>0.961</b></span>
+                      </li>
+                      <li class="auc-item" tabindex="0" style="--v: 0.706">
+                        <span class="auc-name"><b>METABRIC</b> <span>Independent test · n = 223</span></span>
+                        <span class="auc-track"><span class="auc-bar"></span><span class="auc-val">0.706</span></span>
+                        <span class="auc-tip">Sensitivity <b>0.818</b> · Specificity <b>0.622</b></span>
+                      </li>
+                    </ul>
+                    <div class="auc-axis" aria-hidden="true">
+                      <span class="tick tick-0">0</span><span class="tick tick-half">0.5 = chance</span><span class="tick tick-1">1.0</span>
+                    </div>
+                  </div>
+                </li>
+              </ol>
+              <details class="auc-table">
+                <summary>Show as table</summary>
+                <div class="auc-table-wrap">
+                  <table>
+                    <thead><tr><th scope="col">Cohort</th><th scope="col">n (LM)</th><th scope="col">AUC</th><th scope="col"><abbr title="Sensitivity">Sens.</abbr></th><th scope="col"><abbr title="Specificity">Spec.</abbr></th></tr></thead>
+                    <tbody>
+                      <tr><th scope="row">E-MTAB-365</th><td>412 (37)</td><td>0.872</td><td>0.838</td><td>0.800</td></tr>
+                      <tr><th scope="row">GSE2603</th><td>82 (14)</td><td>0.949</td><td>0.857</td><td>0.956</td></tr>
+                      <tr><th scope="row">GSE5327</th><td>58 (7)</td><td>0.877</td><td>0.714</td><td>0.961</td></tr>
+                      <tr><th scope="row">METABRIC</th><td>223 (22)</td><td>0.706</td><td>0.818</td><td>0.622</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </details>
+              <figcaption id="pipeline-caption"><b>Figure:</b> Workflow of the study and AUC of the 10-gene risk signature in each cohort. Hover over or tap a bar to see its sensitivity and specificity; LM = patients with lung metastasis.</figcaption>
+            </figure>
+          </div>
+
+          <div class="genes-block">
+            <p class="block-label" id="genes-label">Genes in the risk signature</p>
+            <ul class="genes" aria-labelledby="genes-label">
+              <li>CDK19</li><li>GLUD1</li><li>GTPBP4</li><li>HLCS</li><li>HYI</li>
+              <li>KCND3</li><li>MAP2K1</li><li>NMUR1</li><li>PRKD3</li><li>SLC16A3</li>
+            </ul>
+          </div>
+
+          <div class="related">
+            <p class="block-label" id="related-label">Earlier work on metastasis prediction</p>
+            <ol class="related-steps" aria-labelledby="related-label">
+              <li><span class="rel-year">2021</span><span class="rel-text"><i>GADD45B</i> expression and bone metastasis risk in breast cancer (first author)</span></li>
+              <li><span class="rel-year">2022</span><span class="rel-text">B.Sc. thesis: risk score for predicting lung metastasis in breast cancer</span></li>
+              <li><span class="rel-year">2023</span><span class="rel-text"><i>CFAP410</i> expression and lung metastasis risk</span></li>
+              <li><span class="rel-year">2025</span><span class="rel-text">Three-gene model (<i>IRAK1</i>, <i>ATP11A</i>, <i>LYN</i>), IFMBE Proceedings</span></li>
+            </ol>
+          </div>
+
+          <div class="featured-links">
+            <a class="btn btn-primary" href="https://doi.org/10.1016/j.jmoldx.2025.10.010">
+              Read the paper
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+            </a>
+            <a class="btn btn-secondary" href="https://pubmed.ncbi.nlm.nih.gov/41318062/">
+              PubMed
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <div class="projects-block reveal">
+          <h3 class="col-title"><svg class="icon" aria-hidden="true"><use href="#i-flask"/></svg>Research projects</h3>
+          <ol class="projects">
+            <li class="project">
+              <p class="project-period">2026–2027</p>
+              <div>
+                <h4>An ensemble learning model for thalassemia screening from complete blood count test</h4>
+                <p class="project-meta"><span class="role">Research Assistant</span> · Quantum AI Biomedical Research Lab</p>
+              </div>
+            </li>
+            <li class="project">
+              <p class="project-period">2025–2027</p>
+              <div>
+                <h4>Validity of Red Cell Distribution Width Index to Differentiate between Iron Deficiency Anemia and Thalassemia</h4>
+                <p class="project-meta"><span class="role">Member</span> · Vietnam National University Ho Chi Minh City</p>
+              </div>
+            </li>
+            <li class="project">
+              <p class="project-period">2024–2026</p>
+              <div>
+                <h4>Screening Nature's Melanin Inhibitors: Medicinal Plants for Skin Brightening</h4>
+                <p class="project-meta"><span class="role">Member</span> · Vietnam National University Ho Chi Minh City</p>
+              </div>
+            </li>
+            <li class="project">
+              <p class="project-period">2024–2026</p>
+              <div>
+                <h4>Building a Machine Learning Model for Diagnosis of Hepatocellular Carcinoma</h4>
+                <p class="project-meta"><span class="role">Member</span> · Vietnam National University Ho Chi Minh City</p>
+              </div>
+            </li>
+            <li class="project">
+              <p class="project-period">2023–2025</p>
+              <div>
+                <h4>Develop a method for early detection of prostate cancer based on the expression of miRNA in serum</h4>
+                <p class="project-meta"><span class="role">Member</span> · Vietnam National University Ho Chi Minh City</p>
+              </div>
+            </li>
+            <li class="project">
+              <p class="project-period">2023–2025</p>
+              <div>
+                <h4>Prediction of Lung Metastasis in Breast Cancer Patients</h4>
+                <p class="project-meta"><span class="role">Member</span> · Vietnam National University Ho Chi Minh City</p>
+              </div>
+            </li>
+            <li class="project">
+              <p class="project-period">2023–2025</p>
+              <div>
+                <h4><i>In silico</i> screening of potential antidiabetic phytochemicals from <i>Ipomoea batatas</i> (L.) leaf against multiple therapeutic targets of T2DM</h4>
+                <p class="project-meta"><span class="role">Member</span> · Vietnam National University Ho Chi Minh City</p>
+              </div>
+            </li>
+            <li class="project">
+              <p class="project-period">2021–2022</p>
+              <div>
+                <h4><i>GADD45B</i> Expression Is Associated With Risk of Bone Metastasis and Survival Outcome in Breast Cancer Patients</h4>
+                <p class="project-meta"><span class="role">Principal Investigator</span> · Tan Tao University</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== PUBLICATIONS ============================== -->
+    <section id="publications" class="section section-soft" aria-labelledby="publications-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 id="publications-title">Publications</h2>
+          <p class="section-note">7 of 10 papers appear in Scopus-indexed venues, including 4 journals covered by the Web of Science (SCIE, SSCI, or ESCI).</p>        </div>
+
+        <div class="filters" role="group" aria-label="Filter publications">
+          <button type="button" class="filter" data-filter="all" aria-pressed="true">All <span class="filter-count" data-count="all"></span></button>
+          <button type="button" class="filter" data-filter="journal" aria-pressed="false">Journal articles <span class="filter-count" data-count="journal"></span></button>
+          <button type="button" class="filter" data-filter="conference" aria-pressed="false">Conference papers <span class="filter-count" data-count="conference"></span></button>
+          <button type="button" class="filter" data-filter="first" aria-pressed="false">First / co-first author <span class="filter-count" data-count="first"></span></button>
+        </div>
+        <p class="pubs-status" id="pubs-status" aria-live="polite"></p>
+
+        <ol class="pubs">
+          <li class="pub" data-type="conference">
+            <p class="pub-year">2026</p>
+            <div class="pub-body">
+              <h3 class="pub-title"><a href="https://doi.org/10.1007/978-3-032-29579-8_10">A 3-Gene Signature for Early Diagnosis, Prognosis and Response Prediction in Non-small Cell Lung Cancer</a></h3>
+              <p class="pub-authors">Duc Phuc Ngo, Ngoc Dien Nguyen, <strong class="me">Thanh Dat Nguyen</strong>, Minh Nam Nguyen</p>
+              <p class="pub-venue"><em>Springer Proceedings in Earth and Environmental Sciences</em> (PBC 2025), pp. 118–137</p>
+              <ul class="tags"><li class="tag">Conference paper</li><li class="tag tag-index">Scopus</li></ul>
+              <details class="abstract">
+                <summary>Abstract</summary>
+                <p>Lung cancer is the second most common type of cancer globally in terms of newly diagnosed cancer-related cases. It is primarily classified into small cell lung cancer (SCLC) and non-small cell lung cancer (NSCLC), with NSCLC accounting for approximately 85% of cases. Despite its prevalence, research for searching biomarkers that can be simultaneously applied in early diagnosis, prognosis, and treatment response in NSCLC remains limited. This study aims to identify biomarkers serving these multiple purposes in NSCLC. Data were collected from the Gene Expression Omnibus, ArrayExpress and the Genomics of Drug Sensitivity in Cancer databases. Separate gene signatures were identified for early diagnosis and prognosis, and a common gene signature was selected through Venn diagram. The shared gene signature was utilized to build models for diagnosis, prognosis, and treatment response prediction, which were validated using independent datasets. In the diagnostic model, a 3-gene signature (<i>SLC2A1, ADARB1,</i> and <i>COL10A1</i>) demonstrated excellent discrimination ability, with high area under the curve values (AUC ≥ 0.900) across all testing sets. The 3-gene signature effectively stratified patients into high-risk and low-risk groups and was confirmed as an independent prognostic factor in both univariate and multivariate Cox regression analyses. In treatment response prediction, the high-risk groups were highly associated with 3 and 8 potential therapeutic drugs in the GSE31210 and GSE50081 datasets, respectively. In conclusion, the 3-gene signature is a robust biomarker for early diagnosis with high sensitivity and specificity, serves as a strong prognostic predictor, and provides valuable insights into therapeutic options for high-risk patients.</p>
+              </details>
+            </div>
+          </li>
+
+          <li class="pub" data-type="journal" data-first>
+            <p class="pub-year">2026</p>
+            <div class="pub-body">
+              <h3 class="pub-title"><a href="https://doi.org/10.12701/jyms.2026.43.21">Gene expression-based machine learning model for diagnosis, prognosis, and treatment response prediction in hepatocellular carcinoma: a retrospective study</a></h3>
+              <p class="pub-authors">Tan Thinh Nguyen*, <strong class="me">Thanh Dat Nguyen*</strong>, Phu Qui Le Nguyen, Phuong Thi Bui, Minh Nam Nguyen</p>
+              <p class="pub-venue"><em>Journal of Yeungnam Medical Science</em> 43, Article 21 · <a href="https://pubmed.ncbi.nlm.nih.gov/41787910/">PubMed</a></p>
+              <ul class="tags"><li class="tag">Journal article</li><li class="tag tag-index">ESCI</li><li class="tag tag-index">Scopus</li><li class="tag tag-metric" title="Journal Impact Factor of the year the article was first published online (2025, Journal Citation Reports)">IF 2025: 2.0</li><li class="tag">Q2</li><li class="tag tag-accent">Co-first author</li></ul>
+              <details class="abstract">
+                <summary>Abstract</summary>
+                <p><strong>Background:</strong> Hepatocellular carcinoma (HCC) remains a leading cause of cancer-related mortality worldwide, largely because of challenges in early diagnosis and the limited sensitivity of conventional biomarkers. Therefore, reliable molecular tools for early detection, prognostic stratification, and individualized treatment predictions are urgently required. <strong>Methods:</strong> This retrospective study analyzed publicly available gene expression datasets. Candidate biomarkers were identified from the GSE14520 cohort using a multistep screening workflow that integrated differential expression analysis, diagnostic performance, and prognostic relevance. A 10-gene diagnostic model was constructed using least absolute shrinkage and selection operator logistic regression and subsequently validated across multiple independent cohorts. Survival outcomes were evaluated using the Kaplan-Meier analysis and treatment responses to sorafenib and transarterial chemoembolization (TACE) were assessed using receiver operating characteristic analysis. <strong>Results:</strong> A 10-gene signature (<i>TOP2A, CDK1, CYP3A4, MASP2, EPHX2, HAO1, RACGAP1, GLYAT, ADH1B, and CYP4A11</i>) was established. The model demonstrated robust internal performance and consistent accuracy across external validation cohorts (area under the curve [AUC], &gt;0.9). This signature effectively identified early-stage HCC and distinguished malignancy from cirrhosis. High-risk scores were significantly associated with poor overall survival and recurrence-free survival (p &lt; 0.05). Furthermore, the model could predict treatment sensitivity, with higher risk scores associated with better outcomes for sorafenib (AUC, 0.791), whereas lower risk scores correlated with an improved response to TACE (AUC, 0.768). <strong>Conclusion:</strong> Our gene expression-based machine learning model provides a robust tool for HCC diagnosis, prognosis, and treatment response prediction, with potential as a supportive system for personalized clinical decision-making.</p>
+              </details>
+            </div>
+          </li>
+
+          <li class="pub" data-type="journal" data-first>
+            <p class="pub-year">2026</p>
+            <div class="pub-body">
+              <h3 class="pub-title"><a href="https://doi.org/10.1016/j.jmoldx.2025.10.010">Prediction of Lung Metastasis in Breast Cancer Patients Using Machine Learning Classifiers</a></h3>
+              <p class="pub-authors"><strong class="me">Thanh Dat Nguyen</strong>, Quynh-Mai Thi Nguyen, Tuong Van Nguyen, Phuong Thi Bui, Kim Nhuong Thi Nguyen, Minh Nam Nguyen</p>
+              <p class="pub-venue"><em>The Journal of Molecular Diagnostics</em> 28(2), pp. 147–159 · <a href="https://pubmed.ncbi.nlm.nih.gov/41318062/">PubMed</a></p>
+              <ul class="tags"><li class="tag">Journal article</li><li class="tag tag-index">SCIE</li><li class="tag tag-index">Scopus</li><li class="tag tag-metric" title="Journal Impact Factor of the year the article was first published online (2025, Journal Citation Reports)">IF 2025: 3.9</li><li class="tag">Q1</li><li class="tag tag-accent">First author</li></ul>
+              <details class="abstract">
+                <summary>Abstract</summary>
+                <p>Breast cancer is the most common cancer among women, and metastasis to the lung is associated with poor prognosis. Reliable biomarkers for predicting lung metastasis are urgently needed to improve early detection and clinical decision-making. This study used microarray data sets comprising gene expression profiles and clinical data from primary breast cancer patients who were followed up for lung metastasis outcomes. High-throughput screening combined with Venn diagram analysis was used to identify common candidate probes, and the least absolute shrinkage and selection operator method were used to select 11 genes for model development. Logistic regression was used to construct predictive models, and the final risk signature consisted of 10 candidate genes (<i>CDK19, GLUD1, GTPBP4, HLCS, HYI, KCND3, MAP2K1, NMUR1, PRKD3, and SLC16A3</i>). The model achieved strong performance in training and validation cohorts (areas under the curve &gt; 0.87) and generalized to the independent METABRIC data set (area under the curve = 0.706). Subset analyses restricted to patients with early-stage disease confirmed that the signature retained predictive value. Kaplan-Meier analyses showed that patients with high-risk scores had shorter lung metastasis-free survival, recurrence-free survival, and overall survival. Multivariate Cox analysis confirmed that the risk signature provided independent predictive information from clinical variables. In conclusion, the risk signature accurately identifies patients with breast cancer at risk of lung metastasis, enabling clinicians to better assess risk and tailor effective treatment strategies.</p>
+              </details>
+            </div>
+          </li>
+
+          <li class="pub" data-type="conference">
+            <p class="pub-year">2025</p>
+            <div class="pub-body">
+              <h3 class="pub-title"><a href="https://doi.org/10.1007/978-3-031-90194-2_44">Application of Machine Learning in Predicting Lung Metastasis in Breast Cancer Patients</a></h3>
+              <p class="pub-authors">Tuong Van Nguyen, Quynh Mai T. Nguyen, <strong class="me">Thanh Dat Nguyen</strong>, Minh Linh Nguyen, Minh Nam Nguyen</p>
+              <p class="pub-venue"><em>IFMBE Proceedings</em> (BME 2024), vol. 122, pp. 625–639</p>
+              <ul class="tags"><li class="tag">Conference paper</li><li class="tag tag-index">Scopus</li><li class="tag tag-index">EI Compendex</li></ul>
+              <details class="abstract">
+                <summary>Abstract</summary>
+                <p><strong>Background:</strong> Breast cancer is the most common cancer in women, and the lung is one of the frequent sites for metastasis in breast cancer. Identifying biomarkers to predict lung metastasis is essential for early detection and targeted intervention, thereby improving survival rates for patients with lung metastatic breast cancer. <strong>Method:</strong> Four datasets (E-MTAB-365, GSE2603, GSE11078, and GSE14020) from NCBI and Array Express databases, containing gene expression profiles and clinical data from breast cancer patients, were selected. High-throughput screening identified potential biological markers by evaluating the predictive ability of each gene for lung metastasis, and a Venn diagram was used to find common genes across datasets with an AUC &gt; 0.65. Using the linear regression algorithm, we developed a gene-based model to predict the risk of lung metastasis with E-MTAB-365 as the training dataset and the remaining datasets for validation. Model performance was evaluated through ROC curve analysis and the Kaplan-Meier curve. <strong>Results:</strong> The model, consisting of three genes (<i>IRAK1, ATP11A,</i> and <i>LYN</i>), achieved a good AUC across the analyzed datasets. The model demonstrated that patients with lung metastasis had significantly higher risk scores than those without. In addition, patients with high-risk scores faced a higher risk of lung metastasis and a shorter non-metastatic survival time. <strong>Conclusion:</strong> We successfully built a machine-learning model based on gene expression to predict lung metastasis in breast cancer patients and validated its reliability. Our results suggest the potential application of the established model as a predictive tool to assist physicians in practical diagnosis.</p>
+              </details>
+            </div>
+          </li>
+
+          <li class="pub" data-type="conference">
+            <p class="pub-year">2025</p>
+            <div class="pub-body">
+              <h3 class="pub-title"><a href="https://doi.org/10.1007/978-3-031-90197-3_74">Long-Term Mental Health Impact of COVID-19 on Pregnant Women in Vietnam</a></h3>
+              <p class="pub-authors">Minh Nam Nguyen, Huy Dung Tran, Kim Nhuong T. Nguyen, <strong class="me">Thanh Dat Nguyen</strong>, Dieu Hien T. Huynh, Thu Suong T. Nguyen, Bao An H. Nguyen, Giau Van Vo</p>
+              <p class="pub-venue"><em>IFMBE Proceedings</em> (BME 2024), vol. 123, pp. 928–940</p>
+              <ul class="tags"><li class="tag">Conference paper</li><li class="tag tag-index">Scopus</li><li class="tag tag-index">EI Compendex</li></ul>
+              <details class="abstract">
+                <summary>Abstract</summary>
+                <p>The adverse effects of COVID-19 infections during pregnancy have been extensively documented; however, the persistent sequelae of this infection remain unexplored. This study aimed to investigate the mental health status of women who recovered from COVID-19 infection during pregnancy using the Depression, Anxiety, and Stress Scale (DASS-21) questionnaire. A cross-sectional observational study enrolled 104 women, including 56 participants who recovered from COVID-19 infection during pregnancy (COVID-19 pregnant women-CPW) and 48 controls who were never infected with COVID-19 during pregnancy (non-COVID-19 pregnant women, NCPW) from November 15th, 2022, to February 15th, 2023, at the Respiratory Department in Children’s Hospital 1, Ho Chi Minh City. Data were collected through a questionnaire that gathered general participant information and included a DASS-21 questionnaire. Results showed that 77% of the CPW reported at least one long-term symptom, with fatigue (62.50%), sore throat (60.71%), and cough (57.14%) being the most common. CPW exhibited significantly higher stress, anxiety, and depression scores compared to NCPW (p &lt; 0.0108, p &lt; 0.0006 and p &lt; 0.0007, respectively). Depression correlated significantly with residence (p &lt; 0.0394). Spearman correlation analysis indicated positive associations between depression, anxiety, and stress core in CPW. These findings suggested that COVID-19 infection during pregnancy exerts a notable impact on mental health outcomes, including anxiety, depression, and stress. Further investigations should be performed to elucidate potential mechanisms underlying these findings to develop interventions supporting maternal and infant mental health.</p>
+              </details>
+            </div>
+          </li>
+
+          <li class="pub" data-type="journal" data-first>
+            <p class="pub-year">2025</p>
+            <div class="pub-body">
+              <h3 class="pub-title"><a href="https://pubmed.ncbi.nlm.nih.gov/37960844/">Insights into the epidemiology and clinical aspects of post-COVID-19 conditions in adults</a></h3>
+              <p class="pub-authors">Dieu Hien T. Huynh*, <strong class="me">Dat T. Nguyen*</strong>, Thu Suong T. Nguyen, Bao An H. Nguyen, Anh T. T. Huynh, Vy N. N. Nguyen, Dat Q. Tran, Thi N. N. Hoang, Huy Dung Tran, Dao Thanh Liem, Giau V. Vo, Minh Nam Nguyen</p>
+              <p class="pub-venue"><em>Chronic Illness</em> 21(1), pp. 157–169 · Epub November 2023 · doi:10.1177/17423953231209377</p>
+              <ul class="tags"><li class="tag">Journal article</li><li class="tag tag-index">SCIE</li><li class="tag tag-index">SSCI</li><li class="tag tag-index">Scopus</li><li class="tag tag-metric" title="Journal Impact Factor of the year the article was first published online (2023, Journal Citation Reports)">IF 2023: 1.8</li><li class="tag">Q2</li><li class="tag tag-accent">Co-first author</li></ul>
+              <details class="abstract">
+                <summary>Abstract</summary>
+                <p><strong>Objectives:</strong> While most individuals infected with COVID-19 recover completely within a few weeks, some continue to experience lingering symptoms. This study was conducted to identify and describe the clinical and subclinical manifestations of adult patients from the long-term effects of COVID-19. <strong>Methods:</strong> The study analyzed 205 medical records of inpatients (age ≥ 16 years, ≥ 4 weeks post-COVID-19 recovery, and a negative SARS-CoV-2 status at enrollment) at Thong Nhat Hospital, Vietnam, from 6 September 2021 to 26 August 2022, using R language software. <strong>Results:</strong> The majority of patients hospitalized with long COVID-19 symptoms (92.68%) had normal consciousness. The most common symptoms on admission were fatigue (59.02%), dyspnea (52.68%), and cough (42.93%). In total, 80% of patients observed respiratory symptoms, primarily dyspnea, while 42.44% reported neurological symptoms, with sleep disturbance being the most common. Noticeably, 42.93% of patients experienced respiratory failure in the post-COVID-19 period, resembling acute respiratory distress syndrome. <strong>Discussion:</strong> These findings provide crucial insights into the epidemiology, clinical, and subclinical aspects of post-COVID-19 conditions, shedding light on the prevalence of common symptoms and the demographic distribution of affected patients. Understanding these manifestations is vital for patient well-being, improved clinical practice, and targeted healthcare planning, potentially leading to better patient care, management, and future interventions.</p>
+              </details>
+            </div>
+          </li>
+
+          <li class="pub" data-type="journal">
+            <p class="pub-year">2024</p>
+            <div class="pub-body">
+              <h3 class="pub-title"><a href="https://doi.org/10.52163/yhc.v65iCD12.1834">Evaluation of Thalassemia Screening Results and Epidemiological Characteristics in Pregnant Women at Hung Vuong Hospital</a></h3>
+              <p class="pub-authors" lang="vi">Đỗ Nguyễn Thảo Vy, <strong class="me">Nguyễn Thành Đạt</strong>, Nguyễn Lê Phú Quí, Nguyễn Văn Thông, Phạm Nguyễn Hữu Phúc, Hứa Thị Mỹ Huyền, Trần Phương Huy, Nguyễn Nữ Hải Long, Phạm Thị Vân Anh, Nguyễn Minh Nam</p>
+              <p class="pub-venue"><em>Vietnam Journal of Community Medicine</em> 65(Special Issue 12), pp. 153–158</p>
+              <ul class="tags"><li class="tag">Journal article</li><li class="tag">Vietnam</li></ul>
+              <details class="abstract">
+                <summary>Abstract</summary>
+                <p><strong>Objective:</strong> This study aimed to evaluate the screening rate and demographic of Thalassemia among pregnant women at Hung Vuong Hospital. <strong>Subjects and methods:</strong> A cross-sectional study was conducted on a cohort of pregnant women who underwent screening for Thalassemia using mean corpuscular hemoglobin and mean corpuscular volume indices at Hung Vuong Hospital. <strong>Results:</strong> From January 2023 to January 2024, a total of 23,015 pregnant women were screened, with 5,372 cases (23.34%) identified as high-risk for Thalassemia. Among these high-risk cases, 63 pregnant women consented to further confirmatory diagnostic testing, revealing that 38.10% of those screened as high-risk did not carry the disease gene. The prevalence of Alpha-Thalassemia was notably high, accounting for 41.27%, while Beta-Thalassemia was detected in 15.87% of cases. Approximately 4.76% of pregnant women were found to have both Alpha and Beta-Thalassemia. Among those diagnosed with Alpha-Thalassemia, the SEA heterozygous genotype was the most prevalent (68.97%). In the Beta-Thalassemia group, the HBE heterozygous genotype was the most common, comprising 34.48% of cases. <strong>Conclusion:</strong> The rate of Thalassemia gene carriers is high, especially among ethnic minorities, with Alpha-Thalassemia being predominant. Expanding screening and appropriate management of iron deficiency plays a crucial role in improving health for pregnant women.</p>
+              </details>
+            </div>
+          </li>
+
+          <li class="pub" data-type="journal">
+            <p class="pub-year">2023</p>
+            <div class="pub-body">
+              <h3 class="pub-title"><a href="https://doi.org/10.34238/tnu-jst.7726">Prediction of Lung Metastasis Risk in Breast Cancer Patients Based on CFAP410 Expression</a></h3>
+              <p class="pub-authors">Hoang Dang Hieu, <strong class="me">Nguyen Thanh Dat</strong>, Nguyen Thi Quynh Mai, Nguyen Minh Nam</p>
+              <p class="pub-venue"><em>TNU Journal of Science and Technology</em> 228(13), pp. 148–156</p>
+              <ul class="tags"><li class="tag">Journal article</li><li class="tag">Vietnam</li></ul>
+              <details class="abstract">
+                <summary>Abstract</summary>
+                <p>Breast cancer is the most common cancer in women, but the main cause of death in breast cancer is metastasis to other organs in the body. Among these, the lung is one of the common sites of breast cancer metastasis. Determining whether breast cancer has metastasized or not will make the treatment of patients easier. Therefore, the development of a marker to predict breast cancer metastasis has the potential to facilitate more effective treatment and increase the survival time of breast cancer patients. In this study, we analyzed the correlation of Cilia and flagella-associated protein 410 (<i>CFAP410</i>) with breast cancer lung metastasis. The results showed that the expression levels of <i>CFAP410</i> in breast cancer patients without lung metastasis were significantly higher than the expression levels of this gene in patients with lung metastatic breast cancer. In addition, patients with high expression of <i>CFAP410</i> had a low risk of metastasis, and their survival time was also markedly higher than that of patients with low expression levels of <i>CFAP410</i>. Our research also shows that <i>CFAP410</i> can be used as an independent marker to identify breast cancer lung metastasis early, which helps patients receive better treatment and increases survival time for breast cancer lung metastasis patients.</p>
+              </details>
+            </div>
+          </li>
+
+          <li class="pub" data-type="journal" data-first>
+            <p class="pub-year">2023</p>
+            <div class="pub-body">
+              <h3 class="pub-title"><a href="https://doi.org/10.1016/j.heliyon.2023.e13945">Predicting the severity of COVID-19 patients using the CD24-CSF1R index in whole blood samples</a></h3>
+              <p class="pub-authors"><strong class="me">D. Nguyen Thanh</strong>, N. T. Thanh Giang, T. V. Le, N. M. Truong, T. V. Ngo, T. N. Lam, D. T. Nguyen, Q. H. Tran, M. N. Nguyen</p>
+              <p class="pub-venue"><em>Heliyon</em> 9(3), Article e13945 · <a href="https://pubmed.ncbi.nlm.nih.gov/36851954/">PubMed</a></p>
+              <ul class="tags"><li class="tag">Journal article</li><li class="tag tag-index">SCIE</li><li class="tag tag-index">Scopus</li><li class="tag tag-metric" title="Journal Impact Factor of the year the article was first published online (2023, Journal Citation Reports)">IF 2023: 3.4</li><li class="tag">Q1</li><li class="tag tag-accent">First author</li></ul>
+              <details class="abstract">
+                <summary>Abstract</summary>
+                <p>Coronavirus disease 2019 (COVID-19), caused by SARS-CoV-2, has become one of the most serious public health crises worldwide. Most infected people are asymptomatic but are still able to spread the virus. People with mild or moderate illnesses are likely to recover without hospitalization, while critically ill patients face a higher risk of organ injury or even death. In this study, we aimed to identify a novel biomarker that can predict the severity of COVID-19 patients. Clinical information and RNA-seq data of leukocytes from whole blood samples with and without a COVID-19 diagnosis (n = 100 and 26, respectively) were retrieved from the National Center for Biotechnology Information Gene Expression Omnibus database. Raw data were processed using the Transcripts Per Million (TPM) method and then transformed using log2 (TPM+1) for normalization. The CD24-CSF1R index was established. Violin plots, Kaplan-Meier curves, ROC curves, and multivariate Cox proportional hazards regression analyses were performed to evaluate the prognostic value of the established index. The CD24-CSF1R index was significantly associated with ICU admission (n = 50 ICU, 50 non-ICU) and ventilatory status (n = 42 ventilation, 58 non-ventilation) with p = 4.186e-11 and p = 1.278e-07, respectively. The ROC curve produced a relatively accurate prediction of ICU admission with an AUC of 0.8524. Additionally, patients with a high index had significantly fewer mechanical ventilation-free days than patients with a low index (p = 6.07e-07). Furthermore, the established index showed a strong prognostic ability for the risk of using a ventilator in the multivariate Cox regression model (p &lt; 0.001). The CD24-CSF1R index was significantly associated with COVID-19 severity. The established index could have potential implications for prognosis, disease severity stratification, and clinical management.</p>
+              </details>
+            </div>
+          </li>
+
+          <li class="pub" data-type="journal" data-first>
+            <p class="pub-year">2021</p>
+            <div class="pub-body">
+              <h3 class="pub-title"><a href="https://sti.gov.vn/publication/bieu-hien-cua-gadd45b-lien-quan-den-nguy-co-di-can-vao-xuong-o-benh-nhan-ung-thu-vu-NDMzNTc5">GADD45B Expression Associated with Bone Metastasis Risk in Breast Cancer Patients</a></h3>
+              <p class="pub-authors"><strong class="me">Nguyen Thanh Dat</strong>, Tran Quynh Hoa, Nguyen Dinh Truong, Nguyen Minh Nam</p>
+              <p class="pub-venue"><em>Journal of Science, Technology and Food</em> 21(4), pp. 94–109</p>
+              <ul class="tags"><li class="tag">Journal article</li><li class="tag">Vietnam</li><li class="tag tag-accent">First author</li></ul>
+              <details class="abstract">
+                <summary>Abstract</summary>
+                <p>Bone metastatic breast cancer is an uncurable disease. Approximately 80% of patients with advanced breast cancer develop bone metastasis, and these patients' life expectancy is limited to 2-3 years following diagnosis of bone metastasis. Currently, there is no effective therapy for this condition because of lacking therapeutic targets. Therefore, identifying biomarkers that can be used to diagnose early and prognose of bone metastatic breast cancer is necessary. In this study, we used bioinformatics tools to analyse the expression of <i>GADD45B</i> and its correlation with bone metastasis breast cancer. Our results showed that <i>GADD45B</i> expression correlates with the risk and duration of bone metastasis of breast cancer. Breast cancer patients with high expression levels of <i>GADD45B</i> had a high risk of bone metastasis and poor bone metastasis-free survival outcomes. <i>GADD45B</i> is an independent biomarker to predict bone metastasis of breast cancer. Elevated expression of <i>GADD45B</i> predicts a poor prognosis in breast cancer patients. <i>GADD45B</i> could be a potential therapeutic target for patients with bone metastatic breast cancer. Taken together, the current results show that <i>GADD45B</i> is a valuable biomarker for improving diagnostic efficiency and prognosis in the age of precision medicine.</p>
+              </details>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================== AWARDS ============================== -->
+    <section id="awards" class="section" aria-labelledby="awards-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 id="awards-title">Awards &amp; Achievements</h2>
+          <p class="section-note">Prizes and honors for cancer biomarker research and AI tools for thalassemia and liver cancer screening, from city and national competitions in Vietnam to academic awards in Taiwan.</p>
+        </div>
+
+        <ul class="awards" id="awards-list">
+          <li class="award">
+            <a class="award-media" href="assets/img/awards/vnu-letter-of-gratitude-1600.webp">
+              <img src="assets/img/awards/vnu-letter-of-gratitude-640.webp" width="428" height="640" loading="lazy" decoding="async"
+                   alt="Letter of gratitude from Vietnam National University Ho Chi Minh City addressed to a research team that includes Nguyen Thanh Dat.">
+            </a>
+            <div class="award-body">
+              <p class="award-date">2025 – May 2026</p>
+              <h3>Letter of Gratitude for Scientific and Technological Contributions</h3>
+              <p class="award-org">Vietnam National University Ho Chi Minh City (VNU-HCM)</p>
+              <p class="award-desc">Research team member. Letter of gratitude from the President of VNU-HCM for the team's contributions to the university's scientific, technological, and academic work.</p>
+              <a class="award-link" href="https://www.sggp.org.vn/dai-hoc-quoc-gia-tphcm-phat-trien-mo-hinh-vien-ao-ket-noi-nghien-cuu-khong-bien-gioi-ve-kh-cn-post852931.html">News article (SGGP, Vietnamese)</a>
+            </div>
+          </li>
+          <li class="award">
+            <a class="award-media" href="assets/img/awards/cgu-certificate-of-merit-1600.webp">
+              <img src="assets/img/awards/cgu-certificate-of-merit-640.webp" width="456" height="640" loading="lazy" decoding="async"
+                   alt="Chang Gung University Certificate of Merit issued to Nguyen, Thanh Dat of the Graduate Institute of Artificial Intelligence for academic excellence, signed by the university president.">
+            </a>
+            <div class="award-body">
+              <p class="award-date">Aug 2025 – Jan 2026</p>
+              <h3>Certificate of Merit for Academic Excellence</h3>
+              <p class="award-org">Chang Gung University</p>
+              <p class="award-desc">Awarded by the President of Chang Gung University for academic excellence in the Graduate Institute of Artificial Intelligence.</p>
+            </div>
+          </li>
+          <li class="award">
+            <a class="award-media" href="assets/img/awards/moe-scholarship-2025-1600.webp">
+              <img src="assets/img/awards/moe-scholarship-2025-640.webp" width="401" height="640" loading="lazy" decoding="async"
+                   alt="Thanh Dat Nguyen holding an award certificate in front of a colourful display wall.">
+            </a>
+            <div class="award-body">
+              <p class="award-date">Sep 2025 – Aug 2027</p>
+              <h3>MOE Taiwan Scholarship (2025)</h3>
+              <p class="award-org">Ministry of Education, Taiwan</p>
+              <p class="award-desc">Awarded by the Ministry of Education, Taiwan, for the master's program.</p>
+              <a class="award-link" href="https://www.roc-taiwan.org/uploads/sites/233/2025/07/Danh-s%C3%A1ch-CH%C3%8DNH-TH%E1%BB%A8C-MOE.pdf">List of recipients (PDF)</a>
+            </div>
+          </li>
+          <li class="award">
+            <a class="award-media" href="assets/img/awards/hcmc-creative-award-2025-1600.webp">
+              <img src="assets/img/awards/hcmc-creative-award-2025-640.webp" width="640" height="480" loading="lazy" decoding="async"
+                   alt="Four team members at night outside the ceremony venue, holding a framed certificate and a trophy from the Ho Chi Minh City Creative Award.">
+            </a>
+            <div class="award-body">
+              <p class="award-date"><time datetime="2025-06-26">June 26, 2025</time></p>
+              <h3>The 4th Ho Chi Minh City Creative Award (2025)</h3>
+              <p class="award-org">Ho Chi Minh City People's Committee</p>
+              <p class="award-desc"><strong>Third Prize</strong>, Science and Technology (Field 6): Application of big data analysis and machine learning in identifying biomarkers for the diagnosis, prognosis, and treatment of primary liver cancer.</p>
+              <a class="award-link" href="https://nhandan.vn/trao-tang-giai-thuong-sang-tao-thanh-pho-ho-chi-minh-lan-4-cho-51-san-pham-post891084.html">News article (Nhân Dân, Vietnamese)</a>
+            </div>
+          </li>
+          <li class="award">
+            <a class="award-media" href="assets/img/awards/hcmc-tech-creativity-2025-1600.webp">
+              <img src="assets/img/awards/hcmc-tech-creativity-2025-640.webp" width="640" height="452" loading="lazy" decoding="async"
+                   alt="Framed certificate of merit from the 28th Ho Chi Minh City Technical Creativity Contest awarded to Nguyen Thanh Dat.">
+            </a>
+            <div class="award-body">
+              <p class="award-date"><time datetime="2025-06-19">June 19, 2025</time></p>
+              <h3>The 28th Ho Chi Minh City Technical Creativity Contest</h3>
+              <p class="award-org">Ho Chi Minh City Union of Science and Technology Associations (HUSTA)</p>
+              <p class="award-desc"><strong>Third Prize</strong>: Development of an ensemble machine learning model and a website for prenatal thalassemia screening.</p>
+              <a class="award-link" href="https://www.facebook.com/share/p/1GwJdDuir8/">University post on Facebook (Vietnamese)</a>
+            </div>
+          </li>
+          <li class="award">
+            <a class="award-media" href="assets/img/awards/binh-duong-2025-1600.webp">
+              <img src="assets/img/awards/binh-duong-2025-640.webp" width="640" height="395" loading="lazy" decoding="async"
+                   alt="Award ceremony on stage; the screen announces the Second Prize for the author group Nguyen Minh Nam, Bui Thi Phuong, Nguyen Thanh Dat and Nguyen Thi Kim Nhuong.">
+            </a>
+            <div class="award-body">
+              <p class="award-date"><time datetime="2025-05-25">May 25, 2025</time></p>
+              <h3>The 11th Binh Duong Province Technical Creativity Contest (2025)</h3>
+              <p class="award-org">Binh Duong Province Union of Science and Technology Associations</p>
+              <p class="award-desc"><strong>Second Prize</strong>: Application of big data analysis and machine learning in identifying biomarkers for the diagnosis, prognosis, and treatment of primary liver cancer.</p>
+              <a class="award-link" href="https://www.uhsvnu.edu.vn/tin-tuc/tin-thanh-tich-sinh-vien/giai-nhi-hoi-thi-sang-tao-ky-thuat-tinh-binh-duong-lan-thu-xi-thuoc-ve-nhom-tac-gia-truong-dai-hoc-khoa-hoc-suc-khoe-14032026">University news (Vietnamese)</a>
+            </div>
+          </li>
+          <li class="award">
+            <a class="award-media" href="assets/img/awards/smart-city-2024-1600.webp">
+              <img src="assets/img/awards/smart-city-2024-640.webp" width="640" height="480" loading="lazy" decoding="async"
+                   alt="Winners on stage holding First Prize boards in front of a screen reading Giải Nhất for the Genetic4health thalassemia screening project.">
+            </a>
+            <div class="award-body">
+              <p class="award-date"><time datetime="2024-12-31">December 31, 2024</time></p>
+              <h3>Smart City 2024 Competition</h3>
+              <p class="award-org">Saigon Hi-tech Park Incubation Center (SHTP-IC)</p>
+              <p class="award-desc"><strong>First Prize</strong> (Group A: Digital Technology/IoT): an AI-based website for prenatal thalassemia screening. <strong>Third Prize</strong> (Group B: Biotechnology): software for early diagnosis, prognosis, and treatment of liver cancer.</p>
+              <a class="award-link" href="https://nhandan.vn/trao-giai-cuoc-thi-smart-city-2024-sang-kien-xay-dung-thanh-pho-thong-minh-post851228.html">News article (Nhân Dân, Vietnamese)</a>
+            </div>
+          </li>
+          <li class="award">
+            <a class="award-media" href="assets/img/awards/national-youth-conf-2024-1600.webp">
+              <img src="assets/img/awards/national-youth-conf-2024-640.webp" width="640" height="405" loading="lazy" decoding="async"
+                   alt="Stage at the 22nd National Youth Conference on Medical Science and Technology; the screen shows the Third Prize for an ensemble learning model for thalassemia prediction from complete blood count tests.">
+            </a>
+            <div class="award-body">
+              <p class="award-date"><time datetime="2024-12-25">December 25–27, 2024</time></p>
+              <h3>22nd National Youth Conference on Medical Science and Technology (2024)</h3>
+              <p class="award-org">Ministry of Health; organized by Can Tho University of Medicine and Pharmacy</p>
+              <p class="award-desc"><strong>Third Prize</strong> (Biomedical Engineering Section) for the oral presentation “An ensemble learning model for thalassemia prediction from complete blood count test”.</p>
+              <a class="award-link" href="https://tuoitre.vn/hoi-nghi-tuoi-tre-nganh-y-73-bao-cao-khoa-hoc-bang-tieng-anh-20241225164949237.htm">News article (Tuổi Trẻ, Vietnamese)</a>
+            </div>
+          </li>
+          <li class="award">
+            <a class="award-media" href="assets/img/awards/ai-star-2024-1600.webp">
+              <img src="assets/img/awards/ai-star-2024-640.webp" width="640" height="360" loading="lazy" decoding="async"
+                   alt="AI.STAR 2024 poster for THALASCREEN, an application that uses machine learning to screen for thalassemia before birth, with photos of the team.">
+            </a>
+            <div class="award-body">
+              <p class="award-date"><time datetime="2024-12-13">December 13, 2024</time></p>
+              <h3>AI.STAR 2024 Competition</h3>
+              <p class="award-org">Ho Chi Minh City Department of Science and Technology</p>
+              <p class="award-desc"><strong>Certification for Advancing to Incubation</strong> for two projects: an AI-based model and prenatal screening website for thalassemia, and an AI-integrated website for the diagnosis, prognosis, and treatment of liver cancer.</p>
+              <a class="award-link" href="https://www.facebook.com/share/p/18T7LJkJe3/">AI.STAR post on Facebook (Vietnamese)</a>
+            </div>
+          </li>
+          <li class="award">
+            <a class="award-media" href="assets/img/awards/thong-nhat-workshop-2024-1600.webp">
+              <img src="assets/img/awards/thong-nhat-workshop-2024-640.webp" width="640" height="427" loading="lazy" decoding="async"
+                   alt="Five award recipients holding certificates on stage at a scientific workshop on digital transformation and artificial intelligence in healthcare.">
+            </a>
+            <div class="award-body">
+              <p class="award-date"><time datetime="2024-05-31">May 31, 2024</time></p>
+              <h3>Scientific Workshop on Digital Transformation &amp; AI in Diagnosis and Treatment (2024)</h3>
+              <p class="award-org">Center of Science and Technology Development for Youth</p>
+              <p class="award-desc"><strong>Second Prize</strong> (Oral &amp; Poster): machine learning models for early detection and personalized treatment of liver cancer. <strong>Consolation Prize</strong> (Poster): <i>in silico</i> screening of biomarkers for early diagnosis and prognosis in non-small cell lung cancer. <strong>Impressive Poster Award</strong>: machine learning for predicting lung metastasis in breast cancer patients.</p>
+              <a class="award-link" href="https://bvtn.org.vn/benh-vien-thong-nhat-to-chuc-hoi-thao-khoa-hoc-ung-dung-chuyen-doi-so-va-tri-tue-nhan-tao-trong-linh-vuc-y-te/">News article (Thong Nhat Hospital, Vietnamese)</a>
+            </div>
+          </li>
+          <li class="award">
+            <a class="award-media" href="assets/img/awards/scientific-initiative-2024-1600.webp">
+              <img src="assets/img/awards/scientific-initiative-2024-640.webp" width="640" height="427" loading="lazy" decoding="async"
+                   alt="Award recipients on stage at the 2024 Young Scientists and Creative Startups conference in Hanoi, holding award plaques.">
+            </a>
+            <div class="award-body">
+              <p class="award-date"><time datetime="2024-05-16">May 16, 2024</time></p>
+              <h3>Scientific Initiative 2024</h3>
+              <p class="award-org">Ministry of Science and Technology, Vietnam</p>
+              <p class="award-desc"><strong>Consolation Prize</strong>: Diagnosis, prognosis and treatment prediction of liver cancer based on <i>F12</i> gene expression.</p>
+              <a class="award-link" href="https://vnexpress.net/7-cong-trinh-thang-giai-cuoc-thi-sang-kien-khoa-hoc-2024-4745052.html">News article (VnExpress, Vietnamese)</a>
+            </div>
+          </li>
+          <li class="award">
+            <a class="award-media" href="assets/img/awards/covid-vaccine-conf-2021-1600.webp">
+              <img src="assets/img/awards/covid-vaccine-conf-2021-640.webp" width="640" height="452" loading="lazy" decoding="async"
+                   alt="Certificate of merit from the Center of Science and Technology Development for Youth for a Second Prize at the 2021 young scientists' workshop on COVID-19 vaccines.">
+            </a>
+            <div class="award-body">
+              <p class="award-date"><time datetime="2021-11-29">November 29, 2021</time></p>
+              <h3>Young Science Conference “COVID-19 Vaccine: Research and Application” (2021)</h3>
+              <p class="award-org">Center of Science and Technology Development for Youth</p>
+              <p class="award-desc"><strong>Second Prize</strong> for the oral presentation “Prognosis of COVID-19 severity in patients using the CD24-CSF1R index”.</p>
+              <a class="award-link" href="https://khoahoctre.com.vn/hoi-thao-khoa-hoc-tre-vac-xin-covid-19-nghien-cuu-va-ung-dung/">Event page (Vietnamese)</a>
+            </div>
+          </li>
+          <li class="award">
+            <a class="award-media" href="assets/img/awards/bioscience-conf-2021-1600.webp">
+              <img src="assets/img/awards/bioscience-conf-2021-640.webp" width="457" height="640" loading="lazy" decoding="async"
+                   alt="Certificate for Excellent Presentation at the 2021 Student Bio-Science Conference awarded to Nguyen Thanh Dat for work on GADD45B and bone metastasis in breast cancer.">
+            </a>
+            <div class="award-body">
+              <p class="award-date"><time datetime="2021-05-22">May 22–23, 2021</time></p>
+              <h3>Student Bio-Science Conference 2021</h3>
+              <p class="award-org">University of Science, VNU-HCM</p>
+              <p class="award-desc"><strong>Outstanding Oral Presentation Award</strong> for “Up-regulation of <i>GADD45B</i> is associated with high risk of bone metastasis and poor survival outcome in breast cancer patients”.</p>
+              <a class="award-link" href="https://ttu.edu.vn/dau-an-thanh-cong-cuu-sinh-vien-khoa-cong-nghe-sinh-hoc/">University news (Vietnamese)</a>
+            </div>
+          </li>
+          <li class="award">
+            <a class="award-media" href="assets/img/awards/tan-tao-university-campus-1068.webp">
+              <img src="assets/img/awards/tan-tao-university-campus-640.webp" width="640" height="419" loading="lazy" decoding="async"
+                   alt="Front view of the main building of Tan Tao University, with palm trees and a flowering hedge in the foreground.">
+            </a>
+            <div class="award-body">
+              <p class="award-date">Sep 2018 – Aug 2022</p>
+              <h3>Tan Tao University Scholarship</h3>
+              <p class="award-org">Tan Tao University</p>
+              <p class="award-desc"><strong>Full scholarship (100%)</strong> for the first year and a <strong>70% scholarship</strong> for the following years. Two more semesters were raised to <strong>100%</strong> for academic excellence.</p>
+              <a class="award-link" href="https://biotech.ttu.edu.vn/vi/alumni/">Alumni page (Vietnamese)</a>
+            </div>
+          </li>
+        </ul>
+        <div class="awards-more" hidden>
+          <button type="button" class="btn btn-secondary" id="awards-toggle" aria-controls="awards-list" aria-expanded="false">
+            <span class="awards-toggle-label">Show all awards</span>
+            <svg class="icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== CONTACT ============================== -->
+    <section id="contact" class="section section-soft" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact-card reveal">
+          <div class="contact-main">
+            <h2 id="contact-title">Contact</h2>
+            <p class="contact-lede">For research collaboration or questions about my work, please email me.</p>
+            <div class="email-row">
+              <a class="email-link" href="mailto:M1461025@cgu.edu.tw">
+                <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>
+                M1461025@cgu.edu.tw
+              </a>
+              <button type="button" class="copy-btn" id="copy-email" data-email="M1461025@cgu.edu.tw" hidden>
+                <svg class="icon icon-copy" aria-hidden="true"><use href="#i-copy"/></svg>
+                <svg class="icon icon-check" aria-hidden="true"><use href="#i-check"/></svg>
+                <span class="copy-label">Copy</span>
+              </button>
+              <span class="visually-hidden" id="copy-status" aria-live="polite"></span>
+            </div>
+            <p class="contact-affil">
+              <svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg>
+              Quantum AI Biomedical Research Lab, Department of Artificial Intelligence, Chang Gung University, Taoyuan, Taiwan
+            </p>
+          </div>
+
+          <ul class="contact-links" aria-label="Profiles and documents">
+            <li>
+              <a href="https://scholar.google.com/citations?user=3tyazNoAAAAJ&amp;hl=en">
+                <svg class="icon" aria-hidden="true"><use href="#i-scholar"/></svg>
+                <span><strong>Google Scholar</strong><small>Publications and citations</small></span>
+                <svg class="icon icon-go" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://orcid.org/0009-0002-9241-6371">
+                <span class="orcid-badge" aria-hidden="true">iD</span>
+                <span><strong>ORCID</strong><small>0009-0002-9241-6371</small></span>
+                <svg class="icon icon-go" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/Fusika1203">
+                <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>
+                <span><strong>GitHub</strong><small>@Fusika1203</small></span>
+                <svg class="icon icon-go" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-name">© 2026 Thanh Dat Nguyen · Student ID: M1461025</p>
+      <p>
+        Built with HTML, CSS and JavaScript with help from Claude Code.
+        Icons: <a href="https://lucide.dev/">Lucide</a> (ISC). Fonts: Figtree, Noto Sans, Noto Sans TC (SIL Open Font License).
+        Last updated October 2026.
+      </p>
+      <a class="back-top" href="#about">Back to top</a>
+    </div>
+  </footer>
+
+  <dialog class="lightbox" id="lightbox" aria-labelledby="lightbox-caption">
+    <figure>
+      <img id="lightbox-img" src="" alt="">
+      <figcaption id="lightbox-caption"></figcaption>
+    </figure>
+    <button type="button" class="icon-btn lightbox-close" id="lightbox-close" aria-label="Close image">
+      <svg class="icon" aria-hidden="true"><use href="#i-x"/></svg>
+    </button>
+  </dialog>
+</body>
+</html>
